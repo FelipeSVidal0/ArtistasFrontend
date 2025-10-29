@@ -1,7 +1,10 @@
+import Navbar from "../../components/navbar/Navbar";
+
 function Home() {
+
     return (
         <div>
-            <p>Opa</p>
+            <Navbar></Navbar>
         </div>
     );
 }

@@ -1,0 +1,70 @@
+.navbar {
+    width: 100%;
+    height: 8rem;
+    background-color: var(--main-purple);
+}
+
+.nav-top {
+    width: 100%;
+    height: 35%;
+    background-color: var(--scd-purple);
+    padding: 0 2rem 0 2rem;
+    display: flex;
+    align-items: center;
+}
+
+.nav-top>ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+
+.nav-top ul>li {
+    color: var(--gray);
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.nav-bottom {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5rem 0 5rem;
+}
+
+.nav-bottom>div {
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.nav-bottom div>h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-user-data {
+    border-left: 2px solid var(--scd-purple);
+    padding-left: 1rem;
+    gap: 1rem;
+}
+
+.nav-user-data>ion-icon {
+    color: var(--light-gray);
+    font-size: 1.5rem;
+    background-color: var(--scd-purple);
+    padding: .7rem;
+    border-radius: 100%;
+}
+
+.nav-user-data div>p {
+    font-size: 0.9rem;
+}
+
+.nav-username {
+    font-weight: 700;
+}
