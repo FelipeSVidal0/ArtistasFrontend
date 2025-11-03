@@ -7,13 +7,13 @@ function Navbar() {
     const isLoggedIn = true;
 
     return (
-        <nav className='navbar'>
-            <div className='nav-top'>
+        <header>
+            <nav className='nav-top'>
                 <ul>
                     <li>Início</li>
                     <li>Destaques</li>
                 </ul>
-            </div>
+            </nav>
 
             <div className='nav-bottom'>
                 <div>
@@ -35,7 +35,7 @@ function Navbar() {
                     <p>Entrar ou Cadastrar</p>
                 )}
             </div>
-        </nav>
+        </header>
     )
 }
 
