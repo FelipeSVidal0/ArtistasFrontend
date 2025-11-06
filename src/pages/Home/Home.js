@@ -1,5 +1,30 @@
 import Navbar from "../../components/navbar/Navbar";
 import "./Home.css";
+import { IonIcon } from '@ionic/react';
+import { star } from 'ionicons/icons';
+
+const obrasMock = [
+    { name: "Obra 1", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 2", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 3", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 4", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+    { name: "Obra 5", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
+]
 
 function Home() {
 
@@ -17,7 +42,7 @@ function Home() {
                         <img src={`${process.env.PUBLIC_URL}/headline-img.svg`}></img>
                     </div>
 
-                    <img src={`${process.env.PUBLIC_URL}/triangulo.png`}></img>
+                    <img className="triangulo" src={`${process.env.PUBLIC_URL}/triangulo.png`}></img>
                 </section>
 
                 <section className="containerArtisticAxes">
@@ -54,14 +79,73 @@ function Home() {
                     </div>
                 </section>
 
-                <section className="teste">
+                <div className="label-destaques">
                     <h4>Obras em destaque</h4>
-                    <p>bla</p>
-                    <p>bla</p>
-                    <p>bla</p>
-                    <p>bla</p>
-                    <p>bla</p>
-                </section>
+
+                    <div className="boxes-estrelas">
+                        <input type="radio" id="btnT" name="grupo" hidden/>
+
+                         <label for="btnT" class="box-estrelas">
+                            Todos
+                        </label>
+
+                        <input type="radio" id="btn5" name="grupo" hidden/>
+                        <label for="btn5" class="box-estrelas">
+                            5
+                            <IonIcon icon={star} />    
+                        </label>
+
+                        <input type="radio" id="btn4" name="grupo" hidden/>
+                        <label for="btn4" class="box-estrelas">
+                            4
+                            <IonIcon icon={star} /> 
+
+                        </label>
+
+                        <input type="radio" id="btn3" name="grupo" hidden/>
+                        <label for="btn3" class="box-estrelas">
+                            3
+                            <IonIcon icon={star} /> 
+                        </label>
+
+                        <input type="radio" id="btn2" name="grupo" hidden/>
+                        <label for="btn2" class="box-estrelas">
+                            2
+                            <IonIcon icon={star} /> 
+                        </label>
+
+                        <input type="radio" id="btn1" name="grupo" hidden/>
+                        <label for="btn1" class="box-estrelas">
+                            1
+                            <IonIcon icon={star} /> 
+                        </label>
+                    </div>
+                </div>
+
+                <div className="container-cards">
+
+                    {obrasMock.map((obra) => (
+                        <div className="card" key={obra.id}>
+                            <img src={`${process.env.PUBLIC_URL}/lenobrega.png`} alt={`Capa de ${obra.name}`}/>
+
+                            <div className="card-top">
+                                <p className="nome-obra">{obra.name}</p>
+                                <p className="nome-autor">{obra.author}</p>
+                            </div>
+
+                            <div className="card-bottom">
+                                <p className="data-obra">{obra.data}</p>
+                                <div className="avaliacao">
+                                    <p className="numero-estrela">{obra.mediaEstrelas}</p>
+                                    <IonIcon icon={star}></IonIcon>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+
+                    }
+
+                </div>
 
             </main>
         </div>
