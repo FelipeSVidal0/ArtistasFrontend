@@ -1,7 +1,9 @@
 import Navbar from "../../components/navbar/Navbar";
+import footer from "../../components/footer/Footer";
 import "./Home.css";
 import { IonIcon } from '@ionic/react';
 import { star } from 'ionicons/icons';
+import Footer from "../../components/footer/Footer";
 
 const obrasMock = [
     { name: "Obra 1", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
@@ -148,6 +150,9 @@ function Home() {
                 </div>
 
             </main>
+            
+           <Footer></Footer>
+
         </div>
     );
 }
