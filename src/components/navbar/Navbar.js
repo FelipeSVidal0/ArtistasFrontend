@@ -4,7 +4,7 @@ import { IonIcon } from '@ionic/react';
 
 function Navbar() {
 
-    const isLoggedIn = true;
+    const isLoggedIn = false;
 
     return (
         <header>
@@ -32,7 +32,11 @@ function Navbar() {
                     </div>
 
                 ) : (
-                    <p>Entrar ou Cadastrar</p>
+                    <div className='nav-user'>
+                        <button className='LogIn'>Entrar</button>
+                        <p>ou</p>
+                        <button className='SignUp'>Cadastrar</button>
+                    </div>
                 )}
             </div>
         </header>
