@@ -72,3 +72,33 @@ header {
     font-weight: 700;
 }
 
+.nav-user{
+    color: #fff;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    gap: 0.5vw;
+
+}
+
+.SignUp{
+    background-color: transparent;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 600;
+}  
+
+.SignUp:hover{
+    text-decoration: underline;
+} 
+
+.LogIn{
+    background-color: transparent;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.LogIn:hover{
+    text-decoration: underline;
+}
