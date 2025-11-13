@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    font-weight: 400;
+}
+
+.body {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    flex-direction: row; 
+    margin: 0;
+    align-items: flex-start;
+    overflow: hidden; 
+    background-color: #F2F2F8;
+}
+
+.container-left {
+    background-color: #4C096B;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 45vw; 
+    height: 100vh;
+    padding: 6vh 9vh 5vh 15vh;
+    border-radius: 0px 0px 80px 0px;
+    flex-shrink: 0;
+}
+
+.container-left > h1 {
+    font-weight: 400;
+    font-size: 2vw;
+    margin-top: -2vh;
+}
+
+.logo {
+    width: 3.5rem; 
+    margin-top: 6vh;
+}
+
+.texto-pri {
+    margin-top: 5vh;
+}
+
+.texto-sec {
+    margin-top: 8vh;
+    margin-left: 5vh;
+    border-left: 0.3vh solid #CC78F3;
+    padding-left: 2vh;
+    font-size: 1.3vw; 
+    height: 25vh;
+    width: 30vw; 
+}
+
+.texto-sec > p:nth-child(1) {
+    margin-bottom: 0;
+}
+
+.texto-sec > p:nth-child(2) {
+    margin-top: 0;
+}
+
+.texto-sec > p > span {
+    color: #C06DE6;
+    font-weight: 600;
+}
+
+.texto-pri > p {
+    margin: 0;
+    font-weight: 600;
+    font-size: 3.5vw; 
+}
+
+.texto-pri > p:nth-child(2) {
+    color: #bbbbbb;
+}
+
+.texto-pri > p:nth-child(3) {
+    color: #C06DE6;
+}
+
+.container-right{
+    height: 100vh;
+    flex-grow: 1;
+    padding: 20px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 10vw;
+    
+}
+
+.container-right > nav{
+    display: flex;
+    align-self: flex-end;
+    margin-bottom: 10vh;
+    margin-right: 3vw;
+    flex-direction: column;
+    
+}
+
+.loginBtn-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+    width: 25vw;
+    height: 6vh;
+}
+
+.loginBtn-container > button{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    background-color:#4C096B;
+    color:white;
+    font-size: 1.4vw;
+    font-weight: 600;
+    border-radius:15px;
+    cursor:pointer;
+}
+
+.loginBtn-container > button:hover{
+    opacity: 0.9;
+}
+
+.loginLbl > h1{
+    font-size: 2.5vw;
+    font-weight: 500;
+}
+
+.loginLbl{
+    font-size: 1.5vw;
+}
+
+
+.loginLbl > p{
+    color:#7B7B7B;
+}
+
+.inputs{
+    margin-top: 10vh;
+    width: 25vw;
+}
+
+.inputs > p{
+    font-size: 1.1vw;
+    font-weight:700;
+    color: #7B7B7B;
+    margin-top: 3vh;
+}
+
+.inputs > input{
+    width: 100%;
+    height: 5vh;
+    padding-right: 40px;
+    box-sizing: border-box;
+    border: 0;
+    border-radius:8px;
+    padding-left: 1vw;
+    margin-top: 2vh;
+}
+
+.inputs > input::placeholder{
+    font-size: 1vw;
+}
+
+.password-container{
+    width: 100%;
+    position: relative;
+    margin-top: 2vh;
+}
+
+.password-input{
+    width: 100%;
+    height: 5vh;
+    box-sizing: border-box;
+    border: 0;
+    border-radius: 8px;
+    padding-left: 1vw;
+}
+
+.password-input::placeholder{
+    font-size: 1vw;
+}
+
+.signUp{
+    border: 1px solid black;
+    border-radius: 7px;
+    padding:8px;
+    width: 120px;
+    height: 40px;
+    text-align: center;
+    align-self: flex-end;
+    cursor:pointer;
+}
+
+.signUp:hover{
+    opacity: 0.8;
+}   
+
+.passwordBtn{
+    position:absolute;
+    cursor: pointer;
+    padding:5px;
+    color: #666;
+    background-color: transparent;
+    border: 0;
+    top:10%;
+    right: 3%;
+    height: 4vh;
+    padding: 0;
+    
+}
+
+.passwordBtn:hover{
+    opacity: 0.7;
+}
+
+@media (max-width: 768px) {
+    .body {
+        flex-direction: column; 
+        height: auto;
+        overflow: visible; 
+    }
+
+    .container-left {
+        width: 100vw; 
+        height: auto; 
+        padding: 4vh 5vh 3vh 5vh; 
+        border-radius: 0px 0px 40px 0px; 
+        flex-shrink: 1; 
+    }
+
+    .container-left > h1 {
+        font-size: 2rem;
+        margin-top: 0;
+    }
+
+    .logo {
+        width: 3rem; 
+        margin-top: 3vh;
+    }
+
+    .texto-pri {
+        margin-top: 3vh;
+    }
+
+    .texto-pri > p:nth-child(1),
+    .texto-pri > p:nth-child(2),
+    .texto-pri > p:nth-child(3) {
+        font-size: 3rem; 
+    }
+
+    .texto-sec {
+        margin-top: 4vh;
+        margin-left: 0;
+        border-left: none; 
+        padding-left: 0; 
+        font-size: 1rem; 
+        height: auto; 
+        width: 100%; 
+    }
+
+    .container-right {
+        height: auto; 
+        padding: 15px;
+        flex-grow: 0; 
+    }
+    .passwordBtn {
+        right: 8px; 
+    }
+    
+    .passwordBtn svg { 
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .container-left > h1 {
+        font-size: 1.5rem;
+    }
+
+    .logo {
+        width: 2.5rem;
+    }
+
+    .texto-pri > p:nth-child(1),
+    .texto-pri > p:nth-child(2),
+    .texto-pri > p:nth-child(3) {
+        font-size: 2.5rem;
+    }
+
+    .texto-sec {
+        font-size: 0.9rem;
+    }
+
+    .password-input-container input {
+        font-size: 12px;
+        padding: 6px 30px 6px 6px;
+    }
+    
+    .passwordBtn {
+        right: 6px;
+    }
+    
+    .passwordBtn svg {
+        width: 16px;
+        height: 16px;
+    }
+}
