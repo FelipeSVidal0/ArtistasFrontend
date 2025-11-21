@@ -4,7 +4,7 @@ import { IonIcon } from '@ionic/react';
 
 function Navbar() {
 
-    const isLoggedIn = false;
+    const isLoggedIn = true;
 
     return (
         <header>
