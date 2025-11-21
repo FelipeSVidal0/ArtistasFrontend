@@ -21,7 +21,7 @@ function Footer(){
                 <div className="contato">
                     <h3>Contato</h3>
                     <p>maisarte@gmail.com</p>
-                    <p>(13)40028922</p>
+                    <p>(47) 9 92289603</p>
                 </div>
 
                 <div className="links">
