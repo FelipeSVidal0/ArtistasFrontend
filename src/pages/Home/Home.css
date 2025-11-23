@@ -15,14 +15,14 @@
     justify-content: space-between;
     padding: 0 7rem 0 7rem;
     position: relative;
-   
+
 }
 
 .headline>div {
     z-index: 999;
 }
 
-.triangulo{
+.triangulo {
     position: absolute;
     right: 0%;
 }
@@ -82,74 +82,85 @@
     color: #292929;
 }
 
-.cardArtisticAxes > img{
+.cardArtisticAxes>img {
     width: 35%;
 }
 
-.teste{
+.teste {
     height: 1000px;
 }
 
-.label-destaques{
+.label-destaques {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100vw;
-    margin-top: 60px ;
-    gap:0.1vw;
+    margin-top: 60px;
+    gap: 0.1vw;
     padding: 2vh 6vw 3vh 6vw;
 }
 
-input[type="radio"]:checked + .box-estrelas{
+input[type="radio"]:checked+.box-estrelas {
     background-color: #542769;
     color: white;
 }
 
-.boxes-estrelas{
+.boxes-estrelas {
     display: flex;
     justify-content: center;
     gap: 1.5%;
 }
 
-.box-estrelas{
+.box-estrelas {
     color: #542769;
     display: flex;
     width: 3.5vw;
     height: 3.5vh;
     border-radius: 20px;
-    border:2px solid #542769;
+    border: 2px solid #542769;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.2 ease;
     align-items: center;
-    justify-content: center;   
-    gap: 0.5vh; 
+    justify-content: center;
+    gap: 0.5vh;
 }
 
-.label-destaques > h4{
+.label-destaques>h4 {
     font-size: 2vw;
 }
 
-.container-cards{
+.container-cards {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 80px;
+    gap: 60px;
     margin: 4% 6% 0 6%;
     flex-direction: row;
     margin-left: 7vw;
     margin-bottom: 5vh;
 }
 
-.card{
+.card {
     background-color: #fff;
     padding: 16px;
     border-radius: 10px;
-    cursor: pointer;    
+    cursor: pointer;
+    width: 275px;
+    height: 350px;
+    align-items: center;
+    flex-direction: column;
 }
 
-.card-top{
-    display:flex;
+.card img {
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    align-self: center;
+}
+
+.card-top {
+    display: flex;
     flex-direction: column;
     font-size: 0.8vw;
     margin-top: 1.5vh;
@@ -157,36 +168,40 @@ input[type="radio"]:checked + .box-estrelas{
     margin-bottom: 1vh;
 }
 
-.card-bottom{
+.card-bottom {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
 
-nome-artista{
+.nome-obra {
+    color: #292929;
+    font-weight: 600;
+}
+
+.nome-autor {
     color: #292929;
 }
 
-.avaliacao{
+.avaliacao {
     display: flex;
     color: #4C096B;
-    flex-direction: row;   
+    flex-direction: row;
     gap: 7px;
 }
 
-.data-obra{
-   
+.data-obra {
     font-size: 13px;
     color: #777777;
 }
 
-.card-obra > img{
+.card-obra>img {
     width: 50px;
     height: auto;
     align-self: center;
 }
 
-.avaliacao > ion-icon{
+.avaliacao>ion-icon {
     width: 15px;
 }

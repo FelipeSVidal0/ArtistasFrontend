@@ -20,10 +20,17 @@ header {
     list-style: none;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.nav-top>ul div {
+    display: flex;
+    flex-direction: row;
     gap: 1rem;
 }
 
-.nav-top ul>li {
+.nav-top ul>div li {
     color: var(--gray);
     cursor: pointer;
     font-size: 0.9rem;
@@ -56,7 +63,7 @@ header {
     gap: 1rem;
 }
 
-.nav-user-data>ion-icon {
+.nav-user-data>.nav-user-data-icon {
     color: var(--light-gray);
     font-size: 1.5rem;
     background-color: var(--scd-purple);
@@ -69,10 +76,11 @@ header {
 }
 
 .nav-username {
+    width: 100%;
     font-weight: 700;
 }
 
-.nav-user{
+.nav-user {
     color: #fff;
     font-weight: 600;
     display: flex;
@@ -81,24 +89,24 @@ header {
 
 }
 
-.SignUp{
+.SignUp {
     background-color: transparent;
     color: #fff;
     font-size: 1.2rem;
     font-weight: 600;
-}  
+}
 
-.SignUp:hover{
+.SignUp:hover {
     text-decoration: underline;
-} 
+}
 
-.LogIn{
+.LogIn {
     background-color: transparent;
     color: #fff;
     font-weight: 600;
     font-size: 1.2rem;
 }
 
-.LogIn:hover{
+.LogIn:hover {
     text-decoration: underline;
 }

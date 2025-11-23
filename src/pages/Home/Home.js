@@ -1,9 +1,9 @@
 import Navbar from "../../components/navbar/Navbar";
-import footer from "../../components/footer/Footer";
 import "./Home.css";
 import { IonIcon } from '@ionic/react';
 import { star } from 'ionicons/icons';
 import Footer from "../../components/footer/Footer";
+import { useEffect, useState } from "react";
 
 const obrasMock = [
     { name: "Obra 1", author: "Author da obra", data: "14/10/2025", mediaEstrelas: "5,0" },
@@ -30,9 +30,81 @@ const obrasMock = [
 
 function Home() {
 
+
+    const [artists, setArtists] = useState([])
+    const [loggedUser, setLoggedUser] = useState(() => {
+        const saved = localStorage.getItem("LoggedUser");
+        return saved ? JSON.parse(saved) : null;
+    });
+
+    const [loggedUserData, setLoggedUserData] = useState(null)
+
+    const [artworks, setArtworks] = useState([]);
+
+    const fetchArtworks = async () => {
+        try {
+            const res = await fetch("http://localhost:8080/artwork");
+            const data = await res.json();
+            console.log(data)
+            setArtworks(data.filter(a => a !== null));
+        } catch (err) {
+            console.error("Erro ao buscar artworks:", err);
+        }
+    };
+
+    const formatDate = (isoDate) => {
+        if (!isoDate) return "";
+        const date = new Date(isoDate);
+        return date.toLocaleDateString("pt-BR");
+    };
+
+
+    const fetchArtists = async () => {
+
+        try {
+            const res = await fetch('http://localhost:8080/artist');
+            if (res.ok) {
+                const data = await res.json();
+
+                const others = data.filter(u => u.id !== loggedUser.id);
+
+                setArtists(others);
+            } else {
+                console.error("Erro no backend:", res.status);
+            }
+        } catch (error) {
+            console.error("Erro ao buscar artistas", error);
+        }
+    };
+
+    const fetchLoggedUserData = async () => {
+        try {
+            const res = await fetch(`http://localhost:8080/user/${loggedUser.id}`)
+
+            if (res.ok) {
+                const data = await res.json();
+                setLoggedUserData(data)
+            } else {
+                console.error("Erro: " + res.status)
+            }
+        } catch (error) {
+            console.error("Erro ao buscar dados do usuário logado: " + error)
+        }
+    }
+
+    useEffect(() => {
+        fetchLoggedUserData();
+    }, [])
+
+    useEffect(() => {
+        fetchArtworks();
+    }, []);
+
+
+
     return (
         <div className="wrapper">
-            <Navbar></Navbar>
+            <Navbar userName={loggedUserData?.nome} userEmail={loggedUserData?.email} profilePhotoUrl={loggedUserData?.profilePhotoUrl}></Navbar>
 
             <main>
                 <section className="headline">
@@ -82,44 +154,45 @@ function Home() {
                 </section>
 
                 <div className="label-destaques">
+
                     <h4>Obras em destaque</h4>
 
                     <div className="boxes-estrelas">
-                        <input type="radio" id="btnT" name="grupo" hidden/>
+                        <input type="radio" id="btnT" name="grupo" hidden />
 
-                         <label for="btnT" class="box-estrelas">
+                        <label for="btnT" className="box-estrelas">
                             Todos
                         </label>
 
-                        <input type="radio" id="btn5" name="grupo" hidden/>
-                        <label for="btn5" class="box-estrelas">
+                        <input type="radio" id="btn5" name="grupo" hidden />
+                        <label for="btn5" className="box-estrelas">
                             5
-                            <IonIcon icon={star} />    
+                            <IonIcon icon={star} />
                         </label>
 
-                        <input type="radio" id="btn4" name="grupo" hidden/>
-                        <label for="btn4" class="box-estrelas">
+                        <input type="radio" id="btn4" name="grupo" hidden />
+                        <label for="btn4" className="box-estrelas">
                             4
-                            <IonIcon icon={star} /> 
+                            <IonIcon icon={star} />
 
                         </label>
 
-                        <input type="radio" id="btn3" name="grupo" hidden/>
-                        <label for="btn3" class="box-estrelas">
+                        <input type="radio" id="btn3" name="grupo" hidden />
+                        <label for="btn3" className="box-estrelas">
                             3
-                            <IonIcon icon={star} /> 
+                            <IonIcon icon={star} />
                         </label>
 
-                        <input type="radio" id="btn2" name="grupo" hidden/>
-                        <label for="btn2" class="box-estrelas">
+                        <input type="radio" id="btn2" name="grupo" hidden />
+                        <label for="btn2" className="box-estrelas">
                             2
-                            <IonIcon icon={star} /> 
+                            <IonIcon icon={star} />
                         </label>
 
-                        <input type="radio" id="btn1" name="grupo" hidden/>
-                        <label for="btn1" class="box-estrelas">
+                        <input type="radio" id="btn1" name="grupo" hidden />
+                        <label for="btn1" className="box-estrelas">
                             1
-                            <IonIcon icon={star} /> 
+                            <IonIcon icon={star} />
                         </label>
                     </div>
                 </div>
@@ -128,7 +201,7 @@ function Home() {
 
                     {obrasMock.map((obra) => (
                         <div className="card" key={obra.id}>
-                            <img src={`${process.env.PUBLIC_URL}/lenobrega.png`} alt={`Capa de ${obra.name}`}/>
+                            <img src={`${process.env.PUBLIC_URL}/lenobrega.png`} alt={`Capa de ${obra.name}`} />
 
                             <div className="card-top">
                                 <p className="nome-obra">{obra.name}</p>
@@ -147,11 +220,47 @@ function Home() {
 
                     }
 
+
+                    {artworks.map(artwork => (
+                        <div className="card" key={artwork.artWorkId}>
+                            {artwork.contentType === "image" ? (
+                                <img
+                                    src={`http://localhost:8080${artwork.contentUrl}`}
+                                />
+                            ) : (
+                                <video
+                                    src={`http://localhost:8080${artwork.contentUrl}`}
+                                    width="250"
+                                    controls
+                                />
+                            )}
+
+
+
+                            <div className="card-top">
+                                <p className="nome-obra">{artwork.title}</p>
+                                <p className="nome-autor">{artwork.artist?.user?.nome}</p>
+                            </div>
+
+                            <div className="card-bottom">
+                                <p className="data-obra">
+                                    {formatDate(artwork.publishDate)}
+                                </p>
+
+                                <div className="avaliacao">
+                                    {/* <p className="numero-estrela">{artwork.mediaEstrelas}</p> */}
+                                    <IonIcon icon={star}></IonIcon>
+                                </div>
+                            </div>
+                        </div>
+                    ))
+                    }
+
                 </div>
 
             </main>
-            
-           <Footer></Footer>
+
+            <Footer></Footer>
 
         </div>
     );
