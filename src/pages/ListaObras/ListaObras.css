@@ -1,0 +1,132 @@
+.listaObras{
+    display:flex;
+    flex-direction: column;
+    margin: 3vh 0 3vh 6vw;
+    gap:2vh;
+}
+
+.listCateg{
+    display: flex;
+    gap:0.5vw;
+    
+}
+
+.listCateg > h1{
+    font-size:1.9vw;
+    font-weight: 600;
+    padding-bottom: 0.5vh;
+}
+
+.Categ{
+    display: flex;
+    gap:1vw;
+    align-items: center;
+}
+
+.Categ > h1{
+    font-size: 1.5vw;
+    font-weight: 500;
+}
+
+.Categ > img{
+    width: 3.6vw;
+}
+
+.list-cards-container{
+    display: flex;
+    flex-direction: column;
+    border:2px solid #979797;
+    width: 80vw;
+    border-radius: 10px;
+}
+
+.cards{
+    display: flex;
+    flex-direction: row;
+    width: 79dvw;
+    background-color: #fff;
+    padding: 1em 0em 1em 1em;
+    gap: 20%;
+    border-radius: 8px;
+    justify-content: space-between;
+}
+
+.cards-text{
+    display: flex;
+    flex-direction: column;
+}
+
+.left-cards{
+    width: 9dvw;
+    margin-top: 1dvh;
+}
+
+.left-cards > img{
+    border-radius: 8px;
+}
+
+.middle-cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20%;
+    margin-top: 0dvh;
+    width: 40dvw; 
+    margin-left: -15dvw; 
+}
+
+.right-cards{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 10dvw;
+    align-items: flex-end;
+}
+
+.dataObra{
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.cards-btns{
+    display: flex;
+    width: 100%;
+    padding-top: 6rem;
+}
+
+.list-ver-mais{
+    font-size:1vw;
+    color:#542769;
+    display: flex;
+    width: 10dvw;
+    height: 3.5dvh;
+    border-radius: 15px;
+    border:2px solid #542769;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2 ease;
+    align-items: center;
+    justify-content: center;    
+    background-color: #fff;
+    margin: 1rem 0rem 1rem 0;
+    padding: 1rem 0.7rem 1rem 0.7rem;
+    text-align: center;
+}    
+
+.avaliacaoObra{
+    display: flex;
+    gap: 1%;
+    color:var(--scd-purple);
+    font-size: 1.3rem;
+    margin-top: -2dvh;
+    align-items: flex-end;
+}
+
+.nomeObra{
+    font-weight: 600;
+    font-size: 1.8rem;
+}
+
+.descricao{
+    font-size: 1rem;
+    color: #7c7c7c;
+}
