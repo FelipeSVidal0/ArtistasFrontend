@@ -1,0 +1,290 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.body {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #F2F2F8;
+    overflow-x: hidden;
+}
+
+.container-left {
+    background-color: #4C096B;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    width: 45%;
+    min-height: 100vh;
+    padding: 3rem 4rem;
+    border-radius: 0px 0px 80px 0px;
+    justify-content: center;
+}
+
+.container-left>h1 {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.logo {
+    width: 3.5rem;
+    background-color: var(--scd-purple);
+    border-radius: 30%;
+    margin-bottom: 2rem;
+}
+
+.texto-pri {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.texto-pri>p {
+    margin: 0;
+    font-weight: 700;
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.texto-pri>p:nth-child(2) {
+    color: #bbbbbb;
+}
+
+.texto-pri>p:nth-child(3) {
+    color: #C06DE6;
+}
+
+.texto-sec {
+    border-left: 4px solid #CC78F3;
+    padding-left: 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.texto-sec>p {
+    margin: 0;
+}
+
+.texto-sec div p {
+    margin-bottom: 1rem;
+}
+
+.texto-sec div p:last-child {
+    margin-bottom: 0;
+}
+
+.texto-sec p span {
+    color: #C06DE6;
+    font-weight: 600;
+}
+
+.container-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-right>nav {
+    position: absolute;
+    top: 2rem;
+    right: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.container-right>nav p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.login {
+    background-color: transparent;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.login:hover {
+    background-color: #333;
+    color: white;
+}
+
+.signup {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+.signupLbl {
+    margin-bottom: 2rem;
+}
+
+.signupLbl>h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.signupLbl>p {
+    color: #7B7B7B;
+    font-size: 1rem;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.inputs>p {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 0.5rem;
+    margin-top: 1rem;
+}
+
+.inputs>p:first-child {
+    margin-top: 0;
+}
+
+.inputs input {
+    width: 100%;
+    height: 50px;
+    padding: 0 1rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fff;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.inputs input:focus {
+    border-color: #4C096B;
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-input {
+    padding-right: 50px !important;
+}
+
+.passwordBtn {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signupBtn-container {
+    margin-top: 2.5rem;
+}
+
+.signupBtn-container>button {
+    width: 100%;
+    height: 55px;
+    background-color: #4C096B;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.signupBtn-container>button:hover {
+    background-color: #3a0552;
+}
+
+@media (max-width: 960px) {
+    .body {
+        flex-direction: column;
+    }
+
+    .container-left {
+        width: 100%;
+        min-height: auto;
+        padding: 3rem 2rem;
+        border-radius: 0 0 40px 0;
+    }
+    
+    .texto-pri > p {
+        font-size: 2.5rem;
+    }
+
+    .container-right {
+        padding: 2rem;
+        width: 100%;
+    }
+
+    .container-right>nav {
+        position: relative;
+        top: 0;
+        right: 0;
+        width: 100%;
+        justify-content: flex-end;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container-left {
+        padding: 2rem 1.5rem;
+    }
+
+    .texto-pri > p {
+        font-size: 2rem;
+    }
+
+    .container-right {
+        padding: 1.5rem;
+    }
+
+    .container-right>nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    
+    .login {
+        width: 100%;
+        text-align: center;
+    }
+
+    .signupLbl>h1 {
+        font-size: 1.8rem;
+    }
+}

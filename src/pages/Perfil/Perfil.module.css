@@ -1,0 +1,756 @@
+.wrapper {
+    background-color: var(--background);
+    width: 100%;
+    flex: 1;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.mainContent {
+    padding: 0 6rem;
+    flex-grow: 1;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.artist {
+    display: flex;
+    padding: 4rem 0;
+    gap: 4rem;
+    align-items: flex-start;
+}
+
+.artistInfo {
+    flex-grow: 1;
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.artistName {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--text-dark, #330847);
+    margin: 0;
+    word-break: break-word;
+}
+
+.editProfileBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    border-radius: 30px;
+    border: 2px solid var(--scd-purple);
+    background-color: white;
+    color: var(--scd-purple);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.editProfileBtn:hover {
+    background-color: var(--scd-purple);
+    color: white;
+}
+
+.editProfileBtn>ion-icon {
+    font-size: 1.2rem;
+}
+
+.infoRow {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.categoryBadge {
+    display: inline-flex;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background-color: var(--scd-purple);
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.contactInfo {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-bottom: 1.5rem;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    border-left: 5px solid var(--main-purple);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.03);
+}
+
+.contactItem {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #4a4a4a;
+    font-size: 0.95rem;
+}
+
+.contactItem ion-icon {
+    color: var(--main-purple);
+    font-size: 1.2rem;
+    min-width: 1.2rem;
+}
+
+.label {
+    font-weight: 700;
+    color: var(--scd-purple);
+}
+
+.avaliacaoInline {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    color: var(--main-purple);
+}
+
+.avaliacaoInline p {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.avaliacaoInline>ion-icon {
+    font-size: 1.2rem;
+}
+
+.artistBio {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #4a4a4a;
+    max-width: 800px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 250px;
+    max-width: 280px;
+    flex-shrink: 0;
+}
+
+.photoContainer {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0;
+    background-color: var(--main-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photoContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pieces {
+    background-color: var(--light-gray);
+    padding: 2rem 3rem 4rem 3rem;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.top>h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark, #330847);
+}
+
+.boxAdd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    border: 2px solid var(--scd-purple);
+    background-color: var(--scd-purple);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.boxAdd h3 {
+    font-size: 1.5rem;
+    line-height: 1;
+    margin: 0;
+}
+
+.boxAdd p {
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.boxAdd:hover {
+    background-color: var(--main-purple);
+    border-color: var(--main-purple);
+}
+
+.cardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.card {
+    display: flex;
+    background-color: white;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    gap: 1.5rem;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.leftCard {
+    min-width: 150px;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+.leftCard video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.leftCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.middleCard {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.nomeObra {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--text-dark, #330847);
+    margin: 0;
+    word-break: break-word;
+}
+
+.descricao {
+    font-size: 0.95rem;
+    color: #7c7c7c;
+    margin: 0.5rem 0 0 0;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+.avaliacaoObra {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: var(--scd-purple);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.avaliacaoObra p {
+    font-weight: 600;
+    margin: 0;
+}
+
+.rightCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    min-width: 120px;
+    height: 100%;
+    align-self: stretch;
+    flex-shrink: 0;
+}
+
+.dataObra {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #999;
+}
+
+.cardBtns {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.lixeira {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: none;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    flex-shrink: 0;
+}
+
+.lixeira:hover {
+    background-color: #c0392b;
+}
+
+.verMais {
+    padding: 0.5rem 1.5rem;
+    min-width: 80px;
+    border-radius: 20px;
+    border: 2px solid var(--scd-purple);
+    color: var(--scd-purple);
+    background-color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.verMais:hover {
+    background-color: var(--scd-purple);
+    color: white;
+}
+
+.settingsLayout {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 100px;
+    flex-wrap: wrap;
+}
+
+.statusSection {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--light-gray);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    border-left: 5px solid var(--scd-purple);
+}
+
+.statusHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.statusHeader h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark, #330847);
+    margin: 0;
+}
+
+.statusIcon {
+    font-size: 1.8rem;
+    color: var(--scd-purple);
+    flex-shrink: 0;
+}
+
+.statusDescription {
+    font-size: 1rem;
+    color: #4a4a4a;
+    margin-bottom: 1.5rem;
+}
+
+.becomeArtistBtn {
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    border: 2px solid var(--main-purple);
+    background-color: var(--main-purple);
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.becomeArtistBtn:hover {
+    background-color: var(--light-gray);
+    border-color: var(--main-purple);
+    color: var(--main-purple);
+}
+
+.accountSettings {
+    flex: 1;
+    min-width: 300px;
+    background-color: var(--light-gray);
+    padding: 2rem 3rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.settingsHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+}
+
+.settingsHeader h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-dark, #330847);
+    margin: 0;
+}
+
+.settingsIcon {
+    font-size: 1.8rem;
+    color: var(--text-dark, #330847);
+    flex-shrink: 0;
+}
+
+.settingsDescription {
+    font-size: 1rem;
+    color: #7c7c7c;
+    margin-bottom: 1.5rem;
+}
+
+.deleteAccountBtn {
+    padding: 0.75rem 2rem;
+    border-radius: 30px;
+    border: 2px solid #e74c3c;
+    background-color: #e74c3c;
+    color: white;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.deleteAccountBtn:hover {
+    background-color: #c0392b;
+    border-color: #c0392b;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 1rem;
+}
+
+.deleteConfirmModal {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.deleteConfirmModal h3 {
+    color: var(--text-dark);
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.deleteConfirmModal p {
+    margin-bottom: 2rem;
+    color: #4a4a4a;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.cancelBtn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    background-color: white;
+    color: #4a4a4a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancelBtn:hover {
+    background-color: #f0f0f0;
+}
+
+.confirmDeleteBtn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    border: 2px solid #e74c3c;
+    background-color: #e74c3c;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.confirmDeleteBtn:hover {
+    background-color: #c0392b;
+}
+
+@media (max-width: 1024px) {
+    .mainContent {
+        padding: 0 3rem;
+    }
+
+    .artist {
+        padding: 3rem 0;
+        gap: 3rem;
+    }
+
+    .artistName {
+        font-size: 2rem;
+    }
+
+    .editProfileBtn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .pieces {
+        padding: 2rem;
+    }
+
+    .card {
+        padding: 1rem 1.5rem;
+    }
+
+    .lixeira {
+        width: 2.2rem;
+        height: 2.2rem;
+    }
+
+    .accountSettings,
+    .statusSection {
+        padding: 2rem;
+        min-width: auto;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .mainContent {
+        padding: 0 1.5rem;
+    }
+
+    .artist {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 2rem 0;
+        gap: 2rem;
+    }
+
+    .artistInfo {
+        width: 100%;
+    }
+
+    .header {
+        flex-direction: column;
+        gap: 1rem;
+        justify-content: center;
+    }
+
+    .artistName {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .infoRow {
+        justify-content: center;
+    }
+
+    .contactInfo {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        text-align: left;
+    }
+
+    .artistBio {
+        text-align: justify;
+    }
+
+    .view {
+        margin-bottom: 0;
+        width: 100%;
+        max-width: 200px;
+        min-width: auto;
+    }
+
+    .pieces {
+        padding: 1.5rem;
+    }
+
+    .top {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .top>h2 {
+        font-size: 1.5rem;
+    }
+
+    .boxAdd {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+        text-align: left;
+        padding: 1.5rem;
+    }
+
+    .leftCard {
+        width: 100%;
+        height: 200px;
+        aspect-ratio: auto;
+    }
+
+    .middleCard {
+        width: 100%;
+        gap: 0.5rem;
+    }
+
+    .avaliacaoObra {
+        justify-content: flex-start;
+    }
+
+    .rightCard {
+        width: 100%;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+        height: auto;
+        padding-top: 1rem;
+        border-top: 1px solid #eee;
+    }
+
+    .dataObra {
+        margin-bottom: 0;
+    }
+
+    .cardBtns {
+        flex-grow: 0;
+    }
+
+    .verMais {
+        min-width: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    .settingsLayout {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .accountSettings,
+    .statusSection {
+        padding: 1.5rem;
+    }
+
+    .statusHeader h2,
+    .settingsHeader h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .mainContent {
+        padding: 0 1rem;
+    }
+
+    .header {
+        align-items: center;
+    }
+
+    .editProfileBtn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .rightCard {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .cardBtns {
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .verMais {
+        flex-grow: 1;
+        text-align: center;
+    }
+}

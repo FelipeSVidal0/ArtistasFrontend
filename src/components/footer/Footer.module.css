@@ -1,0 +1,97 @@
+.footer {
+    background-color: var(--main-purple);
+    color: #fff;
+    width: 100%;
+    padding: 2rem 4rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    flex-shrink: 0;
+    box-sizing: border-box;
+}
+
+.footerContent {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--light-purple);
+    padding-bottom: 2rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 2rem;
+    width: 100%;
+}
+
+.logoSection {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logoSection img {
+    width: 5rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.logoTexto h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.logoTexto p {
+    font-size: 0.8rem;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.infoSection h3,
+.linksSection h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--light-gray);
+}
+
+.infoSection p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+}
+
+.buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.buttons button {
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+    transition: color 0.2s;
+}
+
+.buttons button:hover {
+    color: var(--light-purple);
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .footer {
+        padding: 2rem 1.5rem;
+    }
+    
+    .footerContent {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+
+    .logoSection {
+        flex-direction: column;
+    }
+}

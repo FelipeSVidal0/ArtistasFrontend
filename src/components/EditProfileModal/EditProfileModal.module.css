@@ -1,0 +1,242 @@
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.editModal {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 12px;
+    width: 90%;
+    min-height: 60vh;
+    max-height: 85vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    max-width: 600px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.modalHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.modalHeader h3 {
+    color: var(--text-dark);
+    margin: 0;
+    font-size: 1.8rem;
+}
+
+.closeIcon {
+    font-size: 2rem;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.closeIcon:hover {
+    color: #e74c3c;
+}
+
+.formGroup {
+    margin-bottom: 1.5rem;
+}
+
+.formGroup label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.formGroup input[type="text"],
+.formGroup input[type="email"],
+.formGroup textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+    transition: border-color 0.2s;
+}
+
+.formGroup input[type="text"]:focus,
+.formGroup input[type="email"]:focus,
+.formGroup textarea:focus {
+    border-color: var(--main-purple);
+    outline: none;
+    box-shadow: 0 0 0 2px rgba(97, 36, 172, 0.2);
+}
+
+.formGroup textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.modalActions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.cancelBtn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    border: 2px solid #ccc;
+    background-color: white;
+    color: #4a4a4a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.cancelBtn:hover {
+    background-color: #f0f0f0;
+}
+
+.saveBtn {
+    padding: 0.75rem 1.5rem;
+    border-radius: 20px;
+    border: 2px solid var(--scd-purple);
+    background-color: var(--scd-purple);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.saveBtn:hover {
+    background-color: var(--main-purple);
+    border-color: var(--main-purple);
+}
+
+.photoUploadGroup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.photoPreview {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    border: 3px solid var(--scd-purple);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.photoPreview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hiddenFileInput {
+    display: none;
+}
+
+.fileUploadLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    border-radius: 30px;
+    background-color: var(--scd-purple);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    border: 2px solid var(--scd-purple);
+}
+
+.fileUploadLabel:hover {
+    background-color: var(--main-purple);
+    border-color: var(--main-purple);
+}
+
+.fileUploadLabel ion-icon {
+    font-size: 1.2rem;
+}
+
+.passwordContainer {
+    position: relative;
+    width: 100%;
+}
+
+.passwordContainer input[type="password"],
+.passwordContainer input[type="text"] {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-right: 3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.passwordToggle {
+    position: absolute;
+    right: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    color: #888;
+    transition: color 0.2s;
+    z-index: 10;
+}
+
+.passwordToggle:hover {
+    color: var(--main-purple);
+}
+
+.passwordToggle ion-icon {
+    font-size: 1.2rem;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .editModal {
+        padding: 1.5rem;
+    }
+
+    .modalHeader h3 {
+        font-size: 1.5rem;
+    }
+
+    .modalActions {
+        flex-direction: column-reverse;
+        gap: 0.75rem;
+    }
+
+    .cancelBtn,
+    .saveBtn {
+        width: 100%;
+    }
+
+    .photoPreview {
+        margin: 1rem auto 0;
+    }
+}

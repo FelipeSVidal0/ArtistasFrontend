@@ -1,114 +1,163 @@
-import './SignUp.css'
-import React, {useState} from 'react';
-import {FiEye, FiEyeOff} from 'react-icons/fi'
+import styles from './SignUp.module.css';
+import React, { useState } from 'react';
+import { FiEye, FiEyeOff } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
+import api from '../../services/api';
 
-function SignUp(){
+function SignUp() {
+    const navigate = useNavigate();
     const [showPassword, setShowPassword] = useState(false);
-    const [showPassword2, setShowPassword2] = useState(false);
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword)
     };
 
-    const togglePasswordVisibility2 = () => {
-        setShowPassword2(!showPassword2)
+    const [formData, setFormData] = useState({
+        nome: '',
+        email: '',
+        password: ''
+    });
+
+    const [photo, setPhoto] = useState(null);
+    const [photoKey, setPhotoKey] = useState(Date.now())
+
+
+    const handleChange = (e) => {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+    };
+
+    const handleRegister = async (e) => {
+        e.preventDefault();
+
+        const form = new FormData();
+        form.append("nome", formData.nome);
+        form.append("email", formData.email);
+        form.append("password", formData.password);
+        form.append("photo", photo);
+
+        try {
+            const response = await api.postFormData("/auth/register", form);
+
+            if (response.ok) {
+                alert("Cadastro realizado com sucesso!");
+                setFormData({ nome: '', email: '', password: '' });
+                setPhoto(null);
+                setPhotoKey(Date.now());
+                navigate('/');
+            } else {
+                alert("Erro ao cadastrar");
+            }
+        } catch (err) {
+            console.error(err);
+        }
     };
 
     return (
-       <div class="body">
-        
-         <section class="container-left">
-            <h1>+ARTE</h1>
+        <div className={styles.body}>
 
-            <img class="logo" src={`${process.env.PUBLIC_URL}/logo.png`}></img>
+            <section className={styles['container-left']}>
+                <h1>+ARTE</h1>
 
-            <div class="texto-pri">
-                
-                <p>Crie.</p>
-                
-                <p>Compartilhe.</p>
-                
-                <p>Inspire!</p>
-            
-            </div>
+                <img
+                    className={styles.logo}
+                    src={`${process.env.PUBLIC_URL}/logo.png`}
+                    alt="Logo +Arte"
+                />
 
-            <div class="texto-sec">
-                
-                <p>Descubra o poder da arte com o<span> +ARTE</span></p>
+                <div className={styles['texto-pri']}>
+                    <p>Crie.</p>
+                    <p>Compartilhe.</p>
+                    <p>Inspire!</p>
+                </div>
 
-                <p>Compartilhe suas criações, conecte-se com outros artistas e inspire o mundo com  o seu talento.</p>
+                <div className={styles['texto-sec']}>
+                    <div>
+                        <p>Descubra o poder da arte com o<span> +ARTE</span></p>
+                        <p>Compartilhe suas criações, conecte-se com outros artistas e inspire o mundo com o seu talento.</p>
+                    </div>
+                    <p>Cada obra é uma nova oportunidade de mostrar quem você é!</p>
+                </div>
 
-                <p>Cada obra é uma nova oportunidade de mostrar quem você é!</p>
-            </div>
+            </section>
 
-        </section>
+            <section className={styles['container-right']}>
+                <nav>
+                    <p>Já tem conta?</p>
 
-        <section class="container-right">
-            <nav>
-                <p>Já tem conta?</p>
+                    <button
+                        className={styles.login}
+                        onClick={() => navigate('/')} 
+                    >
+                        Entrar
+                    </button>
+                </nav>
 
-                <label class="login">Entrar</label>
-            </nav>
+                <form className={styles.signup} onSubmit={handleRegister} autoComplete="off">
+                    <div className={styles.signupLbl}>
+                        <h1>Cadastre-se</h1>
+                        <p>Insira seus dados para avançar</p>
+                    </div>
 
-            <form class="signup"> 
-                <label class="signupLbl">
-                    <h1>Cadastre-se</h1>
-                    <p>Insira seus dados para avançar</p>
-                </label>
 
-                <div class="inputs">
-                    <p>Usuário</p>
-                    <input required class="email" placeholder="Digite o seu Nome de Usuário " type="text"></input>
+                    <input
+                        key={photoKey}
+                        type="file"
+                        accept="image/*"
+                        onChange={(e) => setPhoto(e.target.files[0])}
+                        style={{ margin: '1rem 0', padding: '10px', border: '1px dashed #ccc', borderRadius: '8px' }}
+                    />
 
-                    <p>E-mail</p>
-                    <input required class="email" placeholder="Digite o seu E-mail " type="text"></input>
+                    <div className={styles.inputs}>
+                        <p>Nome</p>
+                        <input
+                            type="text"
+                            placeholder="Digite o seu nome"
+                            name="nome"
+                            onChange={handleChange}
+                            value={formData.nome}
+                            required
+                        />
+
+                        <p>E-mail</p>
+                        <input
+                            type="email"
+                            placeholder="Digite o seu e-mail"
+                            name="email"
+                            onChange={handleChange}
+                            value={formData.email}
+                            required
+                        />
 
                         <p>Senha</p>
-                        <div class="password-container">
+                        <div className={styles['password-container']}>
                             <input
-                                class="password-input"
-                                type={showPassword ? "password" : "text"}
+                                className={styles['password-input']}
+                                type={showPassword ? "text" : "password"}
                                 placeholder="Digite a sua senha"
+                                name="password"
+                                onChange={handleChange}
+                                value={formData.password}
                                 required
                             />
                             <button
                                 type="button"
                                 onClick={togglePasswordVisibility}
-                                class="passwordBtn"
-                
+                                className={styles.passwordBtn}
                             >
                                 {showPassword ? <FiEyeOff size={20} /> : <FiEye size={20} />}
                             </button>
                         </div>
-                        
-                        <p>Repita sua Senha</p>
-                        <div class="password-container">
-                            <input
-                                class="password-input"
-                                type={showPassword2 ? "password" : "text"}
-                                placeholder="Digite a sua Senha Novamente "
-                                required
-                            />
-                            <button
-                                type="button"
-                                onClick={togglePasswordVisibility2}
-                                class="passwordBtn"
-                            >
-                                {showPassword2 ? <FiEyeOff size={20} /> : <FiEye size={20} />}
-                            </button>
-                        </div>
-                </div>
-                <div class="signupBtn-container">
-                    <button type="submit">
-                        Cadastrar
-                    </button>
-                </div>
-            </form>
-        </section>
+                    </div>
+                    <div className={styles['signupBtn-container']}>
+                        <button type="submit">
+                            Cadastrar
+                        </button>
+                    </div>
+                </form>
+            </section>
 
-       </div>
+        </div>
     );
-
 }
 
 export default SignUp;

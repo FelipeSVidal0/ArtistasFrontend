@@ -1,0 +1,286 @@
+
+.wrapper {
+    background-color: var(--background);
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    flex-direction: column;
+    position: relative; 
+}   
+
+.listaObras {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 4rem;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box; 
+}
+
+.listCateg {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.listCateg > h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #555;
+    margin: 0;
+}
+
+.Categ {
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+}
+
+.Categ > h1 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--main-purple);
+    margin: 0;
+}
+
+.Categ > img {
+    width: 2.2rem;
+    height: auto;
+    object-fit: contain;
+}
+
+.listCardsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: 180px 1fr 140px; 
+    background-color: #fff;
+    padding: 1.2rem;
+    border-radius: 12px;
+    gap: 1.5rem;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-items: start;
+}
+
+.cards:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    border-color: var(--scd-purple);
+}
+
+.leftCards {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.leftCards > img,
+.leftCards > video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: #f5f5f5;
+    display: block;
+}
+
+.middleCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.cardsText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.nomeObra {
+    font-weight: 700;
+    font-size: 1.4rem;
+    color: #222;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.descricao {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.avaliacaoObra {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--scd-purple);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.rightCards {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+}
+
+.dataObra {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #888;
+    white-space: nowrap;
+}
+
+.cardsBtns {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.listVerMais {
+    background-color: transparent;
+    color: var(--scd-purple);
+    border: 2px solid var(--scd-purple);
+    padding: 0.5rem 1.2rem;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.listVerMais:hover {
+    background-color: var(--scd-purple);
+    color: #fff;
+}
+
+.emptyState {
+    text-align: center;
+    padding: 4rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    background-color: #fff;
+    border-radius: 12px;
+    border: 2px dashed #e0e0e0;
+    margin-top: 1rem;
+}
+
+.emptyState h3 {
+    color: #777;
+    font-size: 1.2rem;
+}
+
+.btnVoltar {
+    padding: 0.8rem 2rem;
+    background-color: #4C096B;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    font-size: 1rem;
+}
+
+.btnVoltar:hover {
+    background-color: #3a0552;
+}
+
+@media (max-width: 1024px) {
+    .listaObras {
+        padding: 2rem;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .wrapper {
+        height: auto;
+        min-height: 60vh;
+    }
+
+    .listaObras {
+        padding: 1.5rem 1rem;
+        flex: 1 0 auto; 
+    }
+
+    .listCateg {
+        justify-content: center;
+        text-align: center;
+    }
+
+  
+    .cards {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        overflow: hidden;
+        gap: 0;
+        height: auto;
+    }
+
+    .leftCards {
+        width: 100%;
+        height: 180px; 
+        border-radius: 12px 12px 0 0;
+    }
+
+    .middleCards {
+        padding: 1rem 1rem 0.5rem 1rem;
+        gap: 0.8rem;
+        height: auto;
+    }
+
+    .nomeObra {
+        font-size: 1.3rem;
+    }
+
+
+    .rightCards {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem;
+        border-top: 1px solid #f0f0f0;
+        margin-top: 0.5rem;
+        background-color: #fafafa;
+    }
+
+    .cardsBtns {
+        width: auto;
+    }
+
+    .listVerMais {
+        padding: 0.4rem 1.5rem;
+        font-size: 0.85rem;
+    }
+}

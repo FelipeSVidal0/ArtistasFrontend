@@ -1,0 +1,300 @@
+.modalBg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+
+.modalContent {
+    background: white;
+    width: 90vw;
+    max-width: 700px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 20px;
+    padding: 3rem 2.5rem;
+    position: relative;
+    animation: fadeIn .3s ease-out;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.closeBtn {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    font-size: 2.2rem;
+    color: var(--gray, #C7C7C7);
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+}
+
+.closeBtn:hover {
+    color: var(--main-purple, #4C096B);
+    transform: rotate(5deg);
+}
+
+.topAddObra {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--light-gray, #ECECEC);
+}
+
+.addObraLogo {
+    background-color: var(--scd-purple, #542769);
+    width: 3.8rem;
+    min-width: 3.8rem;
+    height: 3.8rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.addObraLogo img {
+    width: 60%;
+    height: auto;
+}
+
+.addObraText h1 {
+    font-size: 1.8rem;
+    color: var(--main-purple, #4C096B);
+    font-weight: 700;
+    margin: 0;
+}
+
+.addObraText p {
+    color: #979797;
+    font-size: 0.9rem;
+    margin-top: 0.2rem;
+}
+
+.h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-dark, #330847);
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+}
+
+.tipoDeObra {
+    margin-bottom: 2rem;
+}
+
+.radioBtns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.radioBtn {
+    display: flex;
+    align-items: flex-start;
+    padding: 1.2rem;
+    border: 1px solid var(--gray, #C7C7C7);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    background-color: white;
+}
+
+.radioBtn:hover {
+    border-color: var(--light-purple, #A020F0);
+    box-shadow: 0 2px 8px rgba(160, 32, 240, 0.1);
+}
+
+.radioBtn input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    flex-shrink: 0;
+    margin-top: 0.15rem;
+    margin-right: 15px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--gray, #C7C7C7);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.radioBtn input[type="radio"]:checked {
+    border-color: var(--light-purple, #A020F0);
+    background-color: var(--light-purple, #A020F0);
+    box-shadow: inset 0 0 0 4px white;
+}
+
+.radioText h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+    color: var(--text-dark, #330847);
+}
+
+.radioText p {
+    font-size: 0.8rem;
+    color: #979797;
+}
+
+.escolhaArquivo {
+    margin-bottom: 2rem;
+}
+
+.arquivoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 160px;
+    border: 2px dashed var(--gray, #C7C7C7);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--light-gray, #ECECEC);
+    position: relative;
+    padding: 1rem;
+    text-align: center;
+}
+
+.arquivoContainer:hover {
+    border-color: var(--light-purple, #A020F0);
+    background-color: #F8F8FF;
+}
+
+.arquivoContainer img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 8px;
+}
+
+.arquivoContainer h3 {
+    font-size: 0.95rem;
+    color: var(--main-purple, #4C096B);
+    margin: 0;
+    font-weight: 600;
+}
+
+.selectedFileText {
+    color: var(--main-purple, #4C096B);
+    font-weight: 600;
+    font-size: 1rem;
+    word-break: break-all;
+}
+
+.descricaoObra {
+    margin-bottom: 0;
+}
+
+.inputTitle {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--gray, #C7C7C7);
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: white;
+}
+
+.inputTitle:focus {
+    outline: none;
+    border-color: var(--light-purple, #A020F0);
+    box-shadow: 0 0 0 3px rgba(160, 32, 240, 0.15);
+}
+
+.descricaoContainer {
+    width: 100%;
+    min-height: 80px;
+    padding: 0.8rem 1rem;
+    border: 1px solid var(--gray, #C7C7C7);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    resize: vertical;
+    margin-bottom: 2rem;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    background-color: white;
+}
+
+.descricaoContainer:focus {
+    outline: none;
+    border-color: var(--light-purple, #A020F0);
+    box-shadow: 0 0 0 3px rgba(160, 32, 240, 0.15);
+}
+
+.publicarBtn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    background-color: var(--light-purple, #A020F0);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, transform 0.1s ease-out;
+    box-shadow: 0 4px 10px rgba(160, 32, 240, 0.4);
+}
+
+.publicarBtn:hover {
+    background-color: var(--main-purple, #4C096B);
+    box-shadow: 0 6px 12px rgba(76, 9, 107, 0.5);
+}
+
+.publicarBtn:active {
+    transform: translateY(2px);
+    box-shadow: 0 2px 5px rgba(76, 9, 107, 0.4);
+}
+
+.plus {
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .modalContent {
+        width: 95vw;
+        padding: 2rem 1.2rem;
+    }
+
+    .topAddObra {
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 1.5rem;
+    }
+
+    .addObraLogo {
+        width: 3.5rem;
+        height: 3.5rem;
+    }
+
+    .addObraText h1 {
+        font-size: 1.5rem;
+    }
+
+    .radioBtns {
+        grid-template-columns: 1fr;
+    }
+
+    .radioBtn {
+        padding: 1rem;
+    }
+}

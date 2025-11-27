@@ -1,36 +1,43 @@
-import "./Footer.css";
-import { IonIcon } from '@ionic/react';
-import { logoFacebook } from 'ionicons/icons';
-import { logoInstagram } from 'ionicons/icons';
+import styles from "./Footer.module.css";
+import { useNavigate } from 'react-router-dom';
 
+function Footer() {
+    const navigate = useNavigate();
 
-function Footer(){
-    return(
-        <footer>
-            
-            <div className="footer-top">
+    const handleScroll = (id) => {
+        navigate('/home', { state: { scrollTo: id } });
+    };
 
-                <div className="logo">
-                    <img src={`${process.env.PUBLIC_URL}/logo-grande.png`} alt='Logo do site'></img>
-                    <div className="logo-texto">
+    return (
+        <footer className={styles.footer}>
+            <div className={styles.footerContent}>
+                
+                <div className={styles.logoSection}>
+                    <img 
+                        src={`${process.env.PUBLIC_URL}/logo-grande.png`} 
+                        alt='Logo +ARTE' 
+                    />
+                    <div className={styles.logoTexto}>
                         <h3>+ARTE</h3>
                         <p>Para Quem Vive a Arte!</p>
                     </div>
                 </div>
 
-                <div className="contato">
+                <div className={styles.infoSection}>
                     <h3>Contato</h3>
-                    <p>maisarte@gmail.com</p>
-                    <p>(47) 9 92289603</p>
+                    <p>maisarte@example.com</p>
+                    <p>(47) 12345-6789</p>
                 </div>
 
-                <div className="links">
-                    <button>Início</button>
-                    <button>Destaques</button>
+                <div className={styles.linksSection}>
+                    <h3>Navegação</h3>
+                    <div className={styles.buttons}>
+                        <button onClick={() => handleScroll("inicio")}>Início</button>
+                        <button onClick={() => handleScroll("destaques")}>Destaques</button>
+                    </div>
                 </div>
 
             </div>
-
         </footer>
     );
 }
